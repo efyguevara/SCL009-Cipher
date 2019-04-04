@@ -1,1 +1,10 @@
-/* Acá va tu código */
+.container {
+    box-sizing: content-box;
+    box-align: center;
+    text-align: center;
+    padding: 10px;
+}
+
+div {
+    padding-bottom: 20px
+}

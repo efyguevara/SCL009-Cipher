@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div id="root">
-      <h1>Hola mundo!</h1>
+    <div id="root" class="container">
+      <div id="introduccion" class="container">
+        <h1>BIENVENIDOS A CIFRADO CESAR</h1>
+        <p>El cifrado Cesar es....</p>
+      </div>
+      <div class="container">
+        <textarea id="textArea1" value="" class="" placeholder="ESCRIBE TU MENSAJE AQUI" name="" cols="70%"
+          rows="8"></textarea>
+      </div>
+
+      <div class="container">
+        <h4>Escoge cuántos caracteres deseas desplazar</h4>
+        <input type="number" id="inputOffSet">
+      </div>
+
+      <div class="container">
+        <button type="button" id="cifrarBtn" value="">CIFRAR MENSAJE</button>
+        <button type="button" id="descifrarBtn" value="">DESCIFRAR MENSAJE</button>
+      </div>
+
+      <div class="container">
+        <textarea placeholder="AQUI APARECERA TU MENSAJE CIFRADO/DESCIFRADO" name="" id="textArea2" cols="70%"
+          rows="8"></textarea>
+      </div>
+
+      <div class="container">
+        <button type="button" id="resetbtn">BORRAR MENSAJE</button>
+      </div>
     </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
+
 </html>
