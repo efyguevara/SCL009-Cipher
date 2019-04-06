@@ -9,9 +9,14 @@ window.cipher = {
     }
 
     for (let i = 0; i <= toEncode.length; i++) {
-      let toAscii = toEncode.charCodeAt(i);
-      if (toAscii >= 65 && toAscii <= 90 || toAscii === 165) {
+      let toAscii = toEncode.charCodeAt(i);    
+
+      if (toAscii >= 65 && toAscii <= 90) {
         codAscii = (toAscii - 65 + offSet) % 26 + 65;
+        codCifrado = String.fromCharCode(codAscii);
+        finCifrado += codCifrado;
+      } else if (toAscii === 32) {
+        codAscii = (toAscii - 32 + offSet) % 1 + 32;
         codCifrado = String.fromCharCode(codAscii);
         finCifrado += codCifrado;
       }
@@ -31,13 +36,17 @@ window.cipher = {
 
     for (let i = 0; i <= toDecode.length; i++) {
       let toAscii = toDecode.charCodeAt(i);
+
       if (toAscii >= 65 && toAscii <= 90) {
         codAscii = (toAscii + 65 - offSet) % 26 + 65;
         codDescifrado = String.fromCharCode(codAscii);
         finDescifrado += codDescifrado;
+      } else if (toAscii === 32) {
+        codAscii = (toAscii + 32 - offSet) % 1 + 32;
+        codDescifrado = String.fromCharCode(codAscii);
+        finDescifrado += codDescifrado;
       }
     }
-
     return finDescifrado;
   }
 };
