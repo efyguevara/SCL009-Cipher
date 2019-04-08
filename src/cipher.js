@@ -15,8 +15,16 @@ window.cipher = {
         codAscii = (toAscii - 65 + offSet) % 26 + 65;
         codCifrado = String.fromCharCode(codAscii);
         finCifrado += codCifrado;
+      } else if (toAscii >= 97 && toAscii <= 122){
+        codAscii = (toAscii - 97 + offSet) % 26 + 97;
+        codCifrado = String.fromCharCode(codAscii);
+        finCifrado += codCifrado;
       } else if (toAscii === 32) {
         codAscii = (toAscii - 32 + offSet) % 1 + 32;
+        codCifrado = String.fromCharCode(codAscii);
+        finCifrado += codCifrado;
+      }else if(toAscii === 241 || toAscii === 209) {
+        codAscii = toAscii
         codCifrado = String.fromCharCode(codAscii);
         finCifrado += codCifrado;
       }
@@ -39,12 +47,24 @@ window.cipher = {
 
       if (toAscii >= 65 && toAscii <= 90) {
         codAscii = (toAscii + 65 - offSet) % 26 + 65;
+        if (codAscii <= 64)
+          codAscii = codAscii + 26;
+        codDescifrado = String.fromCharCode(codAscii);
+        finDescifrado += codDescifrado;
+      } else if (toAscii >= 97 && toAscii <= 122){
+        codAscii = (toAscii - 97 - offSet) % 26 + 97;
+        if (codAscii <= 96)
+          codAscii = codAscii + 26;
         codDescifrado = String.fromCharCode(codAscii);
         finDescifrado += codDescifrado;
       } else if (toAscii === 32) {
         codAscii = (toAscii + 32 - offSet) % 1 + 32;
         codDescifrado = String.fromCharCode(codAscii);
         finDescifrado += codDescifrado;
+      }else if(toAscii === 241 || toAscii === 209) {
+        codAscii = toAscii
+        codDescifrado = String.fromCharCode(codAscii);
+        finDescifrado += codDescifrado; 
       }
     }
     return finDescifrado;
