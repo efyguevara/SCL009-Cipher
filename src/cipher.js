@@ -3,70 +3,98 @@ window.cipher = {
     let codAscii; /*guarda el texto cifrado aun en Ascii*/
     let codCifrado; /*convierte el Ascii en alfabeto normal*/
     let finCifrado = "";
-
-    if (toEncode == "" || offSet == "") {
-      alert("Por favor verifica el valor del mensaje y/o el numero de desplazamiento");
-    }
+    let msgError = "Por favor verifica el valor del mensaje y/o el numero de desplazamiento";
 
     for (let i = 0; i <= toEncode.length; i++) {
-      let toAscii = toEncode.charCodeAt(i);    
+      let toAscii = toEncode.charCodeAt(i);
 
-      if (toAscii >= 65 && toAscii <= 90) {
-        codAscii = (toAscii - 65 + offSet) % 26 + 65;
+      if (toAscii >= 32 && toAscii <= 125) {
+        codAscii = (toAscii - 32 + offSet) % 94 + 32;
         codCifrado = String.fromCharCode(codAscii);
         finCifrado += codCifrado;
-      } else if (toAscii >= 97 && toAscii <= 122){
-        codAscii = (toAscii - 97 + offSet) % 26 + 97;
-        codCifrado = String.fromCharCode(codAscii);
-        finCifrado += codCifrado;
-      } else if (toAscii === 32) {
-        codAscii = (toAscii - 32 + offSet) % 1 + 32;
-        codCifrado = String.fromCharCode(codAscii);
-        finCifrado += codCifrado;
-      }else if(toAscii === 241 || toAscii === 209) {
+      } else if (toAscii === 241 || toAscii === 209) {
         codAscii = toAscii
         codCifrado = String.fromCharCode(codAscii);
         finCifrado += codCifrado;
-      }
-    }
-    return finCifrado;
+      } else if (toAscii === 193 || toAscii === 225) {
+        codAscii = toAscii
+        codCifrado = String.fromCharCode(codAscii);
+        finCifrado += codCifrado;
+      } else if (toAscii === 201 || toAscii === 233) {
+        codAscii = toAscii
+        codCifrado = String.fromCharCode(codAscii);
+        finCifrado += codCifrado;
+      } else if (toAscii === 205 || toAscii === 237) {
+        codAscii = toAscii
+        codCifrado = String.fromCharCode(codAscii);
+        finCifrado += codCifrado;
+      } else if (toAscii === 211 || toAscii === 243) {
+        codAscii = toAscii
+        codCifrado = String.fromCharCode(codAscii);
+        finCifrado += codCifrado;
+      } else if (toAscii === 218 || toAscii === 250) {
+        codAscii = toAscii
+        codCifrado = String.fromCharCode(codAscii);
+        finCifrado += codCifrado;
+      } else if (offSet === "" || toEncode === "") {
+          return msgError;  
+      } 
+    } return finCifrado
   },
-
 
   decode: (toDecode, offSet) => {
     let codAscii; /*guarda el texto cifrado aun en Ascii*/
     let codDescifrado; /*convierte el Ascii en alfabeto normal*/
     let finDescifrado = "";
-
-    if (toDecode == "" || offSet == "") {
-      alert("Por favor verifica el valor del mensaje y/o el numero de desplazamiento");
-    }
+    let msgError = "Por favor verifica el valor del mensaje y/o el numero de desplazamiento";
 
     for (let i = 0; i <= toDecode.length; i++) {
       let toAscii = toDecode.charCodeAt(i);
 
-      if (toAscii >= 65 && toAscii <= 90) {
-        codAscii = (toAscii + 65 - offSet) % 26 + 65;
-        if (codAscii <= 64)
-          codAscii = codAscii + 26;
+      if (toAscii >= 32 && toAscii <= 125) {
+        codAscii = (toAscii - 32 - offSet) % 94 + 32;
+        if (codAscii <= 31)
+          codAscii = codAscii + 94;
         codDescifrado = String.fromCharCode(codAscii);
         finDescifrado += codDescifrado;
-      } else if (toAscii >= 97 && toAscii <= 122){
-        codAscii = (toAscii - 97 - offSet) % 26 + 97;
-        if (codAscii <= 96)
-          codAscii = codAscii + 26;
-        codDescifrado = String.fromCharCode(codAscii);
-        finDescifrado += codDescifrado;
-      } else if (toAscii === 32) {
-        codAscii = (toAscii + 32 - offSet) % 1 + 32;
-        codDescifrado = String.fromCharCode(codAscii);
-        finDescifrado += codDescifrado;
-      }else if(toAscii === 241 || toAscii === 209) {
+      } else if (toAscii === 241 || toAscii === 209) {
         codAscii = toAscii
         codDescifrado = String.fromCharCode(codAscii);
-        finDescifrado += codDescifrado; 
-      }
-    }
-    return finDescifrado;
+        finDescifrado += codDescifrado;
+      } else if (toAscii === 193 || toAscii === 225) {
+        codAscii = toAscii
+        codDescifrado = String.fromCharCode(codAscii);
+        finDescifrado += codDescifrado;
+      } else if (toAscii === 201 || toAscii === 233) {
+        codAscii = toAscii
+        codDescifrado = String.fromCharCode(codAscii);
+        finDescifrado += codDescifrado;
+      } else if (toAscii === 205 || toAscii === 237) {
+        codAscii = toAscii
+        codDescifrado = String.fromCharCode(codAscii);
+        finDescifrado += codDescifrado;
+      } else if (toAscii === 211 || toAscii === 243) {
+        codAscii = toAscii
+        codDescifrado = String.fromCharCode(codAscii);
+        finDescifrado += codDescifrado;
+      } else if (toAscii === 218 || toAscii === 250) {
+        codAscii = toAscii
+        codDescifrado = String.fromCharCode(codAscii);
+        finDescifrado += codDescifrado;
+      } else if (offSet === "" || toDecode === "") {
+        return msgError;
+      } 
+    } return finDescifrado
   }
 };
+
+
+// áéíóú ÁÉÍÓÚ abcdñ ABCDÑ  ! " # $ % & ' ) (  0 * + , - . /  0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ 
+
+/* vocales acentuadas
+Á	193
+É	201
+Í	205
+Ó	211
+Ú  218
+*/
