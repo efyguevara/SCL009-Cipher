@@ -1,292 +1,85 @@
-# Cifrado César
 
-Cifrar significa codificar. El [cifrado César](https://en.wikipedia.org/wiki/Caesar_cipher) es uno de los primeros métodos de cifrado conocidos. El emperador romano Julio César lo usaba para enviar órdenes secretas a sus generales en los campos de batalla.
+# ¡CIFRATE!
 
-![caeser-cipher](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caesar3.svg/2000px-Caesar3.svg.png)
+En la actualidad, la tecnología avanza cada vez mas rápido, y es necesario manejar y resguardar una cantidad importante de información que debe ser solo de uso personal, pero ¿Cómo logramos que esa información no sea utilizada por otras personas?
 
-El cifrado césar es una de las técnicas más simples para cifrar un mensaje. Es un tipo de cifrado por sustitución, es decir que cada letra del texto original es reemplazada por otra que se encuentra un número fijo de posiciones (desplazamiento) más adelante en el mismo alfabeto.
+Para esto, se ha creado ¡CIFRATE! una aplicación que te permite codificar cualquier información que necesites mantener confidencial.
 
-Por ejemplo, si usamos un desplazamiento (_offset_) de 3 posiciones:
+### ¿Cuál es el objetivo principal de esta aplicación? 
 
-- La letra A se cifra como D.
-- La palabra CASA se cifra como FDVD.
-- Alfabeto sin cifrar: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-- Alfabeto cifrado: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+CIFRATE, se ha desarrollado para que podamos mantener la confidencialidad de la información que solo debe manejar un usuario, como por ejemplo:
+* Información Bancaria (Cuentas, datos de ingreso a banca online).
+* Redes Sociales (Instagram, Facebook, Twitter).
+* Portales de compra online (Amazon, Aliexpress).
+* Portales de servicios (Registro Civil, SII, Fonasa)
+* Y cualquier página o aplicación que requiera información confidencial para su ingreso.
+ 
+ Con CIFRATE los usuarios pueden guardar de forma segura su información sin preocuparse de que pueda ser utilizada en caso de que alguien la obtenga, pues al tener el mensaje cifrado solo deberan guardarlo junto con el código de desplazamiento y podrán descifrarlo en la aplicación cuando lo deseen.
 
-En la actualidad, todos los cifrados de sustitución simple se descifran con mucha facilidad y, aunque en la práctica no ofrecen mucha seguridad en la comunicación por sí mismos; el cifrado César sí puede formar parte de sistemas más complejos de codificación, como el cifrado Vigenère, e incluso tiene aplicación en el sistema ROT13.
+ ### ¿Quiénes pueden usar CIFRATE?
 
-## Resumen del proyecto
+* Todas las personas que tengan acceso a internet y deseen almacenar o compartir de forma segura su información.
 
-¿Qué tengo que hacer exactamente? En este proyecto crearás la primera aplicación web del _bootcamp_. Servirá para que el usuario pueda cifrar y descifrar un texto indicando un desplazamiento específico de caracteres (_offset_).
 
-La temática es libre. Tú debes pensar en qué situaciones de la vida real se necesitaría cifrar un mensaje y pensar en cómo debe ser esa experiencia de uso (qué pantallas, explicaciones, mensajes, colores, ¿marca?) etc. 
+### ¿Cómo usar CIFRATE?
 
-Algunas ideas de ejemplo:
+* Para cifrar:
+    
+    1. Ingresa en primer campo la información que deseas cifrar
+    
+    2. Ingresa el número de desplazamiento que quieres utilizar para cifrar tu información.
+    
+    3. Haz click en el boton "CIFRAR MENSAJE" y este aparecerá en el siguiente campo.
+    
+    4. Copia tu código cifrado y guardalo junto con el número de desplazamiento que utilizaste (esta sera tu llave para descifrar el mensaje cuando lo necesites).
+    
+    5. Si deseas cifrar un nuevo mensaje haz click en el boton "Limpiar" y repite el proceso.
 
-- Crear claves seguras para el email.
-- Encriptar/cifrar una tarjeta de crédito.
-- Herramienta de mensajería interna de una organización de derechos humanos en una zona de conflicto.
-- Mensajería secreta para parejas.
+* Para descifrar:
+  
+    1. Ingresa/pega tu información cifrada en el primer campo.
+    
+    2. Ingresa el número de desplazamiento que utilizaste para cifrar el mensaje (si este número no es el que usaste para cifrar tu mensaje, el resultado será diferente del original).
+    
+    3. Haz click en el boton "DESCIFRAR MENSAJE" y tu mensaje original aparecerá en el siguiente campo.
+    
+    4. Si deseas descifrar un nuevo mensaje, haz click en el boton "LIMPIAR" y repite el proceso.
 
 
-## Consideraciones generales
 
-- Este proyecto se debe resolver de manera individual.
-- El proyecto será entregado subiendo tu código a GitHub (commit/push) y la interfaz será desplegada usando GitHub pages. Si no sabes lo que es GitHub, no te preocupes, lo aprenderás durante este proyecto.
-- Tiempo para completarlo: El proyecto dura 2 semanas, trabaja con sprints y planificando tus tareas.
 
-## Objetivos de aprendizaje
+### Diseño:
 
-En este proyecto aprenderás a construir una aplicación web que interactúe con el usuario a través del navegador y la lógica basada en esa interacción. Dicho en palabras sencillas, aprenderás a:
+Con la finalidad que el usuario navegue intuiivamente en la aplicación, sin necesidad de hacer cambios de pantalla para una mejor adaptabilidad; el diseño se realizó en una sola página donde se muestra todo el contenido.
 
-- Pintar elementos de formulario en la pantalla usando **HTML** y **CSS**.
-- Permitir al usuario interactuar (**eventos del DOM**) y hacer algo cuando ocurran dichos eventos (cifrar/descifrar).
-- Manipular _**strings**_ (cadenas de texto).
-- Usar **control de flujo** (bucles, condicionales, ...).
-- Actualizar la pantalla con los resultados (**manipular el DOM**).
-- **Implementar funciones** dada una descripción de su comportamiento.
-- Verificar tu implementación con **pruebas unitarias**.
-- Entender las **necesidades del usuario** y cómo proponer una solución.
-- Organizar tu tiempo y priorizar tareas en un entorno de **alta incertidumbre**.
+Se estructuró de la siguiente manera:
 
-## Parte Obligatoria
+* Bienvenida a la página.
+* Breve introducción para que el usuario se identifique con el objetivo de la aplicación.
+* Instrucciones para cifrado y descifrado de información.
+* Cuadro de texto 1 (Para ingresar la información que se desea cifrar o descifrar).
+* Desplazamiento (Número de caractéres que el usuario escoge desplazar para cifrar/descifrar su mensaje).
+* Boton para Cifrar el mensaje ingresado en el Cuadro de texto 1.
+* Boton para Descifrar el mensaje ingresado en el Cuadro de texto 1.
+* Cuadro de texto 2 (En este espacio aparecerá el mensaje cifrado/descifrado de acuerdo a los parámetros que indique el usuario)
+* Boton "LIMPIAR" (elimina el contenido de todos los pasos anteriores y permite que el usuario ingrese nuevos datos).
 
-Usa este alfabeto simple (solamente mayúsculas y sin ñ):
 
-- A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 
-#### Definición del producto
+#### Flujo de Datos (Se mantuvo hasta la ultima actualización) 
+![Flujo de datos planificado](https://lh3.googleusercontent.com/u09MsFNbxn5LOz5Es532IjLC7mCXXxGhFjlpALZPx10eSPe7RyCvkMs06ItHa5N14md11Zk9PLBhSojzEizzSYoAE4IFL4ZSfcgVVXiAprWjWYlCsp6L3_YdMxiJZmnx7M0ileb1CMu4F-im5MR4YTv5UJPyZcHxyWhRnAtlPK-mBYGWYeZN7rwnspapcRFvSFFiz1qA7uqP6aCQklxy6wDjgaSWzo7u3n-dHiLZ65y0-Ps7U9Yh0LonvnJCRJAzB_0vUNCkEDq4BzrzjKl10QZKenDjvJ2pRaFnNrZMah_F7QrNMu-2GMkxrilD-wqueGIm8ZdAUZCAU1F7Wq6H2oJ5lstLDZmYjQ5q7P5o0aNizYkGNbP09UqHnNamlnqwW8Rr7cLs5jabBJUOV0hAKIwO4mvb08Jr0_rbSI4fsiYs5-DzYiaEp3O6YCzyHD1wQUYewAsx9fuAXH6-wMWzNZ-vucGWcgP1Amlh6z6GjfrubiJtkeJnyechGbpwoOULbSBeEWt1UMP7Cg9r-MZhDenln3zh_hzV1s8dxe8yuZNQYPQqSPe7n_Ig3qaO5Bm7aY8LNiVgBdtMx1S66x45T-hWQ4c_pe7ZPP_UAKbrgj2rofLcbM5bi9aS-gJD1X5ijRgFx393BnY8-LvS6ek8BBzlu4Z05-00=w739-h620-no)
 
-En el README.md, cuéntanos cómo pensaste en los usuarios y cuál fue tu proceso para definir el producto final a nivel de experiencia y de interfaz.
+#### Prototipo de baja fidelidad realizado durante el primer sprint del proyecto.
+![Prototipo de baja fidelidad](https://lh3.googleusercontent.com/sQ7fbeOJPsHaoQcx9kJqp4XqgLA5q1yykqCpLEJUWhpU6g2jQCJH6OcxjV50cj8aIqnsiJq8r0FT8YYSedaa7PRFxeMl_ye1gJCawUggrCnNPShXqZ1w42rk8Yk1o9so-QmNKQY_LNhR0Txv03Q8h7dORqFFVFm3xYJkgYJ_aC0gu6JWprkEFtAvwT3WCDNhB6x1eTOgsjcWdyyBm6PBcjD4-tt_uMnEZ87W7Uc2T9aRq08oOQo70YsVWtankqtVyyzaW9xDRYiBlpQL6xrFJY9r_gMrAy3JPKr-jZzDpwD_NGapN6mYd3drcpaCOitdZxsPAhRS0eMqW4l140waCfR6NY9kxIbXiMztb76fviBqqYrHNLa6zNeKsvhqKrJfKuzyXp4-y4AKef1RrU57Gid9g9tq-E6PfYbOJbYlJD5KX26mmZtXoKHW37Tcm1gVFwYmi5SsEgf_pd5y25Lxh7rZV7i_kYzccNfM4NCcg98Yi-nm63OcwQZ4PxhnCkIZbHZ73-Nex_1_QH5J26XhJf12SwHXZxP4vsTYWDYWCMzYmjyruZkjOKjhuG34F2AvIgDmQxy-sMxfT8GFwASj0LPzMdgbyUULYcawulQxnxKCbcJqbqFnVW2jonoc8xvRMvUqmE2a20Nza1Ynmqb85LzZp-imBbL5=w430-h669-no)
 
-- Quiénes son los principales usuarios de producto.
-- Cuáles son los objetivos de estos usuarios en relación con tu producto.
-- Cómo crees que el producto que estás creando está resolviendo sus problemas.
+#### Primera vista realizada de acuerdo al prototipo de baja fidelidad.
+![Primera vista realizada](https://lh3.googleusercontent.com/VWmYUDvVsfDtOLNHqZ2Ekninr85wRARTD0GW1VHR8Hew4oKzFknmjSwSu1UJrxm_2VRXEkRWCKWzscKvmq3C2GUSqW2Sw-cfuegilrLdeHkKzJmrWcQiK594dOtiTMMKgn93iUsmknZexzEoWxwsIZmDEI__ngFRKTQvfZVEEh74Rzrqr5eDybyaGAafa4rTBo-e5fYAElJM4L997t-A2GY0bIK3FO-tnzNIG0JEqAlkVFpWwAKVE-kcBOsaEzclTpJlRcZBlYxstomUjvObaCAL7Yomhtu5Z0zB9vgDzmWikJXMekLcGb7vYld5arMfUBVt5Qp5SHYaSgSjod2qcdg05LaOEVsbvwO5IEh-kOV9DTSLuLjT2-NWNX0DjblBiknswfEte6wMK1fIa7nMEks1THpBtPU998jfiaIfAJDm9UMbjQh1UsYfoNqu51Wfj9W4olnqOs0Ss2IlpthNasC03RXB2L8oF46vbnv6q3YMiECDpCmOqc-Ro0_TbzEdawS2IS4vqKwblZpxjzmi9HNZvUS3LYqBZ5_9Xfhkow2JGfGb5k01fbRLNvx2eMcJ4esG345FNCpuzuRdId7wAs0GLQXrkFAF7xplrGZ7obNcXHWNI_G4qE3c4K-OgmgxFw1jvRbW2jNfKjQxvplNneKmMRQulylc=w669-h620-no)
 
-#### Interfaz de usuario (UI)
+#### Probando CSS
+![Probando CSS](https://lh3.googleusercontent.com/1a1Io3TGypK4Jzq0ur248t7GzhUJBNuV4hwdlFNjiuendSq-9HoFG6rsKZjkWdFjewNE-OQiCWowciiEqZfQH3XhjVFiETC2V1HOp-O0ZQ_4c4CSDrJc_PejBm2rMUD-tAFA-yu_rY2TH1n50tUVUdmvGAH7A4mlSH0fp6dmWi8_IENCeqTD9fjJ14OPxrAsqSzIFlRHz3jnaVmSMYF1WKsgpkGIVrEnwbDRHsxlx-meg7YQlUzcqGsQNTn8WgQ4SfiQuT2VdSy8MsbQjBZYWEjV-pY6fUBkDvaIZ-FnVvLE3NZWmYT7DBHfNWWny4LOnjwZ6aUuyHWS3QnBYpYCc8toWgT3NsmKwQHDI73Lfqiiq0QoQyAZ0k8cBWE8DBdE8fTdPLQUi9RPkBim61UO2krXSQ0PZgPgX7Niq4iD1tQNOwl4EFp5OVQHGGwb8vvuWFMrk_QBlF9O7nP3Vqk0KdbYNbxlcOLe-4yYsyauyeBi36lkq4v6tW2iEzI6zSfv7eDO7fuilTjTcHlGp49Smn5sbysNENeJJG3rHuTwAz1usLXnSqug2rjx0y3fkNS8KPKpFEcLbLHxlQZErdUQ40lOtt_vzMUlLUmvCV5ubeZNaV5HNykAlqyApcVRpU9750JGTyY7BvmHMBb6RWgKx9bn7DtKkPAa=w1102-h620-no)
 
-La interfaz debe permitir al usuario:
-- Elegir un desplazamiento (_offset_) indicando cuántas posiciones queremos que el cifrado desplace cada caracter.
-- Insertar un mensaje (texto) que queremos cifrar.
-- Ver el resultado del mensaje cifrado.
-- Insertar un mensaje (texto) a descifrar.
-- Ver el resultado del mensaje descifrado.
+#### Pantalla para entrega (parte 1)
+![Pantalla"final" parte 1](https://lh3.googleusercontent.com/_nwxmtYrzTN_l0Yy94KvHO-DWRITMuiCBedfZHYDk1OtldqnTa4nXmW94Uu5bfKnG125vQ7n2oyBQbUuYWT3C1qnBEEbcmPlCzCnqHRBX-RIV_Zolm3zbiN9K-NjFOMaLzhlBn19b5IS9oifU3_4MB-noGuJu257K-DrBF63s_1lrzZ9kwnppx9zB6J75Pbrj8-HK7SSgP2QleN33kDs2OqLPZ_DBle_IaVXhONJxAKz8IRp-b7je7rb9lYo6YYJUr6uaeE3nnJRYlAJDPGSU8ZHz2lJ3ttR0mj2GrGSR1sx3jTTeY29saI0NVmL9LXVlzrAxnE1Kg1TN4QId5C_h7bGrnM__JCs17HDINR5J4WRYeIqTkQ2sHQN_4eJCCTZiv5R9zRMD4ylJuoNJ0uecS-mDrWOUT2AljaYhxJB9lT5M1RoUQDmWzmfGz_Vp6k7LkeKP_KoqLG-TwHwicg4xdb6EkkvWsDU-dCY3PdwfEBw5p67w6CrrAOUe7GB08iIxtEKDvbx56kHDqN6k8fmyZsUc_taslkFY9PV5zBRfcoNF0zk2ZR3x12te2fhBzlL6K0L7y8fM_2qRwuMd2lGfWG5heMxao4nuAtCuHIx_xV7PP7HQUMQpJA8kQRLw2z3buya5NHyhLPxdvo7WwU5zHSs3OidVKP5=w1133-h669-no)
 
-#### Scripts / Archivos
-
-* `README.md`: debe explicar cómo descargar, instalar y ejecutar la aplicación
-  así como una introducción a la aplicación, su funcionalidad y decisiones de
-  diseño que tomaron.
-* `src/index.html`: este es el punto de entrada a tu aplicación. Este archivo
-  debe contener tu _markup_ (HTML) e incluir el CSS y JavaScript necesario.
-* `src/cipher.js`: acá debes implementar el objeto cipher, el cual debe estar
-  _exportado_ en el objeto global (`window`). Este objeto (`cipher`) debe
-  contener dos métodos:
-  - `cipher.encode(offset, string)`: `offset` es el número de posiciones que
-    queremos mover a la derecha en el alfabeto y `string` el mensaje (texto)
-    que queremos cifrar.
-  - `cipher.decode(offset, string)`: `offset` es el número de posiciones que
-    queremos mover a la izquierda en el alfabeto y `string` el mensaje
-    (texto) que queremos descifrar.
-* `src/index.js`: acá debes escuchar eventos del DOM, invocar `cipher.encode()`
-  o `cipher.decode()` según sea necesario y actualizar el resultado en la UI.
-* `test/cipher.spec.js`: este archivo contiene algunos tests de ejemplo y acá
-  tendrás que implementar los tests para `cipher.encode()` y `cipher.decode()`.
-
-## Parte opcional o “Hacker edition”
-
-Las secciones llamadas “Hacker Edition” son opcionales. Si **terminaste** con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
-
-La descripción general de este proyecto no menciona qué pasaría con las letras minúsculas y otros caracteres (como espacios, puntuación, ñ, ...). El boilerplate incluye algunos tests (comentados en principio) que puedes usar como punto de partida para implementar el soporte para estos casos.
-
-Tampoco se menciona qué pasaría si el offset fuera negativo. Como parte del hacker edition te invitamos a explorar también esta caso por tu cuenta.
-
-## Vamos a los detalles. Consideraciones Técnicas
-
-La lógica del proyecto debe estar implementada completamente en JavaScript (ES6).
-En este proyecto NO está permitido usar librerías o frameworks, sólo
-[vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e).
-
-No se debe utilizar la _pseudo-variable_ `this`.
-
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_
-y _lines_, y un mínimo del 50% de _branches_. El _boilerplate_ ya contiene el
-setup y configuración necesaria para ejecutar los tests (pruebas) así como _code
-coverage_ para ver el nivel de cobertura de los tests usando el comando `npm
-test`.
-
-El _boilerplate_ incluye tests (pruebas) de ejemplo como punto de partida.
-
-Para comenzar este proyecto tendrás que hacer un _fork_ y _clonar_ este
-repositorio que contiene el _boilerplate_.
-
-El _boilerplate_ contiene una estructura de archivos como punto de partida así
-como toda la configuración de dependencias y tests de ejemplo:
-
-```text
-./
-├── .editorconfig
-├── .eslintrc
-├── .gitignore
-├── README.md
-├── package.json
-├── src
-│   ├── cipher.js
-│   ├── index.html
-│   ├── index.js
-│   └── style.css
-└── test
-    ├── cipher.spec.js
-    ├── headless.js
-    └── index.html
-```
-
-El _boilerplate_ incluye tareas que ejecutan [eslint](https://eslint.org/) y
-[htmlhint](https://github.com/yaniswang/HTMLHint) para verificar el `HTML` y
-`JavaScript` con respecto a una guías de estilos. Ambas tareas se ejecutan
-automáticamente antes de ejecutar las pruebas (tests) cuando usamos el comando
-`npm run test`. En el caso de `JavaScript` estamos usando un archivo de
-configuración de `eslint` que se llama `.eslintrc` que contiene un mínimo de
-información sobre el parser que usar (qué version de JavaScript/ECMAScript), el
-entorno (browser en este caso) y las [reglas recomendadas (`"eslint:recommended"`)](https://eslint.org/docs/rules/).
-En cuanto a reglas/guías de estilo en sí,
-usaremos las recomendaciones _por defecto_ de tanto `eslint` como `htmlhint`.
-
-## Evaluación
-
-Te aconsejamos revisar [la rúbrica](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRktPN4ilZtkRN5tUb3DVhgeihwlzk63_-JI3moA-bXpKDbHDioAK2H3qbrwWNb0Ql4wX22Tgv7-PDv/pubhtml)
-para ver la descripción detallada de cada _habilidad_ y cada _nivel_. Esta es una lista de todas las habilidades involucradas en este proyecto y que evaluaremos cuando lo  completes:
-
-### General
-
-| Característica/Habilidad |
-|--------------------------|
-| Completitud |
-
-### Habilidades Blandas
-
-| Habilidad |
-|-----------|
-| Planificación y organización |
-| Autoaprendizaje |
-| Solución de problemas |
-| Dar y recibir feedback |
-| Adaptabilidad |
-| Trabajo en equipo |
-| Comunicación eficaz |
-| Presentaciones |
-
-### Habilidades Técnicas Front-end
-
-| Habilidad |
-|-----------|
-| **CS** |
-| Lógica |
-| Arquitectura |
-| **SCM** |
-| Git |
-| GitHub |
-| **JavaScript** |
-| Estilo |
-| Nomenclatura/semántica |
-| Funciones/modularidad |
-| Tests |
-| **HTML** |
-| Validación |
-| Estilo |
-| Semántica |
-| **CSS** |
-| DRY |
-| Responsive |
-
-### Habilidades Técnicas UX
-
-| Habilidad |
-|-----------|
-| User Centricity |
-
-***
-
-## Pistas sobre cómo comenzar a trabajar en el proyecto
-
-1. Antes que nada, asegúrate de tener un :pencil: editor de texto en
-   condiciones, algo como [Atom](https://atom.io/) o
-   [Code](https://code.visualstudio.com/).
-2. Para ejecutar los comandos a continuación necesitarás una :shell:
-   [UNIX Shell](https://github.com/Laboratoria/curricula-js/tree/v2.x/topics/shell),
-   que es un programita que interpreta líneas de comando (command-line
-   interpreter) así como tener [git](https://github.com/Laboratoria/curricula-js/tree/v2.x/topics/scm/01-git)
-   instalado. Si usas un sistema operativo "UNIX-like", como GNU/Linux o MacOS,
-   ya tienes una _shell_ (terminal) instalada por defecto (y probablemente `git`
-   también). Si usas Windows puedes usar [Git bash](https://git-scm.com/download/win),
-   aunque recomendaría que consideres probar :penguin: GNU/Linux.
-3. Haz tu propio :fork_and_knife: [fork](https://help.github.com/articles/fork-a-repo/)
-   del repo de tu cohort, tus _coaches_ te compartirán un _link_ a un repo y te 
-   darán acceso de lectura en ese repo.
-4. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-   tu _fork_ a tu computadora (copia local).
-5. 📦 Instala las dependencias del proyecto con el comando `npm
-   install`. Esto asume que has instalado [Node.js](https://nodejs.org/) (que
-   incluye [npm](https://docs.npmjs.com/)).
-6. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
-   pruebas unitarias (unit tests) con el comando `npm test`.
-7. A codear se ha dicho! :rocket:
-
-## Recursos y temas relacionados
-
-A continuación un video de Michelle que te lleva a través de la fórmula
-matemática del Cifrado César y un par de cosas más que debes saber para
-resolver este proyecto. ¡Escúchala con detenimiento y sigue sus consejos! :)
-
-[![tips caesar cipher](https://img.youtube.com/vi/zd8eVrXhs7Y/0.jpg)](https://www.youtube.com/watch?v=zd8eVrXhs7Y)
-
-Diseño de experiencia de usuario (User Experience Design):
-
-- Ideación
-- Prototipado (sketching)
-- Testeo e Iteración
-
-Desarrollo Front-end:
-
-* [Valores](https://lms.laboratoria.la/cohorts/scl-2019-03-bc-core-common-core-scl009/courses/javascript/01-basics/01-values-variables-and-types)
-* [Tipos](https://lms.laboratoria.la/cohorts/scl-2019-03-bc-core-common-core-scl009/courses/javascript/01-basics/01-values-variables-and-types)
-* [Variables](https://lms.laboratoria.la/cohorts/scl-2019-03-bc-core-common-core-scl009/courses/javascript/01-basics/02-variables)
-* [Control de flujo](https://lms.laboratoria.la/cohorts/scl-2019-03-bc-core-common-core-scl009/courses/javascript/02-flow-control/00-opening)
-* [Tests unitarios](https://lms.laboratoria.la/cohorts/scl-2019-03-bc-core-common-core-scl009/courses/javascript/11-testing/00-opening)
-* [Aprende más sobre `charCodeAt()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charCodeAt)
-* [Aprende más sobre `String.fromCharCode()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/fromCharCode)
-* [Aprende más sobre `ASCII`](http://conceptodefinicion.de/ascii/)
-* [Documentación de NPM](https://docs.npmjs.com/)
-
-Herramientas:
-- [GitHub y GitHub Pages](https://guides.github.com/)
-- [Guía de Scrum](https://www.scrumguides.org/docs/scrumguide/v1/scrum-guide-es.pdf): solamente para comenzar a entender cómo organizar tu trabajo.
-
-## Checklist
-Esta sección está  para ayudarte a llevar un control de lo que vas completando.
-
-### Parte Obligatoria
-* [ ] `README.md` incluye info sobre proceso y decisiones de diseño.
-* [ ] `README.md` explica claramente quiénes son los usuarios y su relación con
-  el producto.
-* [ ] `README.md` explica claramente cómo el producto soluciona los
-  problemas/necesidades de los usuarios.
-* [ ] Usa VanillaJS.
-* [ ] No utiliza `this`.
-* [ ] Implementa `cipher.encode`.
-* [ ] Implementa `cipher.decode`.
-* [ ] Pasa linter con configuración provista.
-* [ ] Pasa pruebas unitarias.
-* [ ] Pruebas unitarias cubren 70% de _statements_, _functions_ y _lines_, y un
-  mínimo del 50% de _branches_.
-* [ ] Interfaz permite elegir el `offset` o _desplazamiento_ a usar en el
-  cifrado/descifrado.
-* [ ] Interfaz permite escribir un texto para ser cifrado.
-* [ ] Interfaz muestra el resultado del cifrado correctamente.
-* [ ] Interfaz permite escribir un texto para ser descifrado.
-* [ ] Interfaz muestra el resultado del descifrado correctamente.
-
-### Parte Opcional: "Hacker edition"
-* [ ] Cifra/descifra minúsculas
-* [ ] Cifra/descifra _otros_ caracteres (espacios, puntuación, `ñ`, `á`, ...)
-* [ ] Permite usar un `offset` negativo.
+#### Pantalla para entrega (parte 2)
+![Pantalla"final" parte 2](https://lh3.googleusercontent.com/o39Xn9myeLm7L7CrWDmYZxsVIv5KxUQpQvU9rfF4G2feYNX1-IgPRHW5gBME4VzgvLdBp8K-TITG6OhsvH2Vnug7VVp7mBLbBa_vEE58Hg_Szkz5WE5yXfJtDJEOt-PJIzK00sKTdkd3FB4Csx_a1LcbiBhzR1XUe6JbRRHUznV2BAMKyC_SO9qmK3UH64B6dwQreOAnYqJTygDf14Zvq5VDecRSSQPncStaKkIaREZZoFIQMGSABL3W6cmtekcsLIAVrccsx4UE7CPyTYRza6dD2IJXIN62ueIrVHAKKFuek4TgjYl8Wapml7Fm0OkjxyyHsCm3ELbxbg7OCv16P2n1cLz2FANLbNAUNpq9bGBi47XYGJEMlP1fGrumPqe_NfQHaBwi0AsiVcLYczgSWC8m9Se3tPtbIOdgqicJWxXUrcBGU_NM65PdW9ZRQsybgnCXrmC20c8Hvww4QHUCjPTd_WfC2tcX0UziUfd-ujnSkBANGmW98Redy0ursE4n0VEpbGO2nQKuAr0L6F2Q7HJhFFQ_xHQBjLmSk3aG2_rAayIf1xxeSm22AntOYFU1Pz-Xzor4m-lGiTUMd4TEBZq34yIU4lpwa1j6qr0bx0UnoyKRqFLqF9O_XD3cTzwWwTfFrDCeeN8VvEZnxHSphJMoYE_0U7Sd=w1129-h669-no)
