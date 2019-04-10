@@ -4,7 +4,6 @@ window.cipher = {
     let codCifrado; /*convierte el Ascii en alfabeto normal*/
     let finCifrado = "";
     let msgError = "Por favor verifica el valor del mensaje y/o el numero de desplazamiento";
-
     for (let i = 0; i <= toEncode.length; i++) {
       let toAscii = toEncode.charCodeAt(i);
 
@@ -37,8 +36,8 @@ window.cipher = {
         codCifrado = String.fromCharCode(codAscii);
         finCifrado += codCifrado;
       } else if (offSet === "" || toEncode === "") {
-          return msgError;  
-      } 
+        return msgError;
+      }
     } return finCifrado
   },
 
@@ -83,18 +82,7 @@ window.cipher = {
         finDescifrado += codDescifrado;
       } else if (offSet === "" || toDecode === "") {
         return msgError;
-      } 
+      }
     } return finDescifrado
   }
 };
-
-
-// áéíóú ÁÉÍÓÚ abcdñ ABCDÑ  ! " # $ % & ' ) (  0 * + , - . /  0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ 
-
-/* vocales acentuadas
-Á	193
-É	201
-Í	205
-Ó	211
-Ú  218
-*/

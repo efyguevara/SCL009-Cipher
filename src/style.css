@@ -1,10 +1,59 @@
-.container {
-    box-sizing: content-box;
-    box-align: center;
-    text-align: center;
-    padding: 10px;
+body {
+    background: url("https://images.ecosia.org/EnIO5J6WfJpl0eobMjC_nD0HVY8=/0x390/smart/https%3A%2F%2Fcsis-prod.s3.amazonaws.com%2Fs3fs-public%2Fpublication%2F170907_Cyber.jpg%3F0labuGVWHUbIatPJmTqDgj4MGOJCEnZV");
+    background-size: 100%;
 }
 
 div {
-    padding-bottom: 20px
+    padding-bottom: 20px;
+}  
+
+h1 {
+    font-size: 50px;
+    color: white;
+    width: 95%;
 }
+
+p {
+    border-radius: 20px;
+    background-color: #f8f4e0db;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 10px;  
+    background-color: #c4ac83;
+}
+
+ol {
+    font-size: 20px;
+    text-align: justify;
+    padding: 0px 40px 10px 40px;
+}
+
+.container {
+   text-align: center;
+   padding: 10px;   
+}
+
+.style {
+    height: 80%;
+    border-radius: 20px;
+    background-color: #f8f4e0db;
+}
+
+.containerTextAreas {
+    margin: 5% 15% 5% 18%;
+    width: 60%;
+    background-color: #f8f4e0db;
+}
+
+.styleTextAreas {
+    resize: none;
+    width: 75%;
+}
+
