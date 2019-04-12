@@ -1,61 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
+  <!-- Meta tags "Para garantizar una representación adecuada y un zoom táctil para todos los dispositivos" -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
   <title>Caesar Cipher</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- CSS sin bootstrap -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div id="root" class="container"><h1>¡BIENVENID@ A CIFRATE!</h1>
-    <p>Con CIFRATE puedes guardar de forma segura tu información sin preocuparte de que pueda ser utilizada por otras personas. 
-        Con nuestro sistema de cifrado podrás tener la información de tus cuentas bancarias, contraseñas o cualquier información en codigos secretos que podras descifrar cuando lo desees.</p>
-    <div id="introduccion" class="container style">
+  <header class="container-fluid text-right">
+    <button class="btn btn btn-lg btn-success">Instrucciones</button>
+    
+  </header>
+  <div id="root" class="container">
+    <h1 class="text-center">¡BIENVENID@ A CIFRATE!</h1>
+    <section class="main text-justify">
+      <p>Con CIFRATE puedes guardar de forma segura tu información sin preocuparte de que pueda ser utilizada por otras
+        personas.
+        Con nuestro sistema de cifrado podrás tener la información de tus cuentas bancarias, contraseñas o cualquier
+        información en codigos secretos que podras descifrar cuando lo desees.</p>
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-5">
+          <textarea id="textArea1" class="col-xs-12 col-md-12 form-control" placeholder="Escribe tu mensaje aqui"></textarea>
+        </div>
+
+        <div class="text-center col-xs-12 col-md-2">
+          <button id="copyResult" class="btn btn-xs btn-warning col-xs-3">< ></button>
+          Desplazamiento<input id="inputOffSet" type="number" class="form-control text-center col-xs-6">
+        </div>
+        <div class="col-xs-12 col-md-5">
+          <textarea id="textArea2" placeholder="Aqui aparecera tu mensaje"
+            class="col-xs-12 col-md-12 form-control"></textarea>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-4  text-center"></div>
+        <div class="col-xs-12 col-md-4  text-center">
+          <button id="cifrarBtn" class="btn btn-sm btn-primary col-xs-6 col-md-12">CIFRAR</button>
+          <button id="descifrarBtn" class="btn btn-sm btn-primary col-xs-6 col-md-12">DESCIFRAR</button>
+          <button id="resetbtn" class="btn btn-sm btn-success col-xs-6 col-md-12"> LIMPIAR</button>
+        <div class="col-xs-12 col-md-4  text-center"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="introduccion" class="container">
+      <h2 class="text-center">Instrucciones</h2>
+      <div class="main row">
+          <ol class="col-xs-12 col-md-6 text-justify">
+            <h4>Para cifrar un mensaje:</h4>
+            <li>Ingresa en primer campo la información que deseas cifrar</li>
+            <li>Ingresa el número de desplazamiento que quieres utilizar para cifrar tu información.</li>
+            <li>Haz click en el boton "CIFRAR MENSAJE" y este aparecerá en el siguiente campo.</li>
+            <li>Copia tu código cifrado y guardalo junto con el número de desplazamiento que utilizaste (esta sera tu
+              llave para descifrar el mensaje cuando lo necesites).</li>
+            <li>Si deseas cifrar un nuevo mensaje haz click en el boton "Limpiar" y repite el proceso.</li>
+          </ol>
+        
+          <ol class="col-xs-12 col-md-6 text-justify">
+            <h4>Para descifrar un mensaje:</h4>
+            <li>Ingresa/pega tu información cifrada en el primer campo.</li>
+            <li>Ingresa el número de desplazamiento que utilizaste para cifrar el mensaje (si este número no es el que
+              usaste para cifrar tu mensaje, el resultado será diferente del original).</li>
+            <li>Haz click en el boton "DESCIFRAR MENSAJE" y tu mensaje original aparecerá en el siguiente campo.</li>
+            <li>Si deseas descifrar un nuevo mensaje, haz click en el boton "LIMPIAR" y repite el proceso.</li>
+          </ol>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
       <div>
-      <h2>Instrucciones</h2>
-      <ol><h4>Para cifrar un mensaje:</h4>
-        <li>Ingresa en primer campo la información que deseas cifrar</li>
-        <li>Ingresa el número de desplazamiento que quieres utilizar para cifrar tu información.</li>
-        <li>Haz click en el boton "CIFRAR MENSAJE" y este aparecerá en el siguiente campo.</li>
-        <li>Copia tu código cifrado y guardalo junto con el número de desplazamiento que utilizaste (esta sera tu llave para descifrar el mensaje cuando lo necesites).</li>
-        <li>Si deseas cifrar un nuevo mensaje haz click en el boton "Limpiar" y repite el proceso.</li>
-        <h4>Para descifrar un mensaje:</h4>
-        <li>Ingresa/pega tu información cifrada en el primer campo.</li>
-        <li>Ingresa el número de desplazamiento que utilizaste para cifrar el mensaje (si este número no es el que usaste para cifrar tu mensaje, el resultado será diferente del original).</li>
-        <li>Haz click en el boton "DESCIFRAR MENSAJE" y tu mensaje original aparecerá en el siguiente campo.</li>
-        <li>Si deseas descifrar un nuevo mensaje, haz click en el boton "LIMPIAR" y repite el proceso.</li>
-      </ol>
+        <h6 class="text-center">Desarrollado por Stefany Guevara</h6>
       </div>
-    </div>
-    <div class="container style containerTextAreas">
-      <div class="container">
-          <h3>Ingresa la información que deseas cifrar/descifrar</h3>
-        <textarea id="textArea1" value="" placeholder="ESCRIBE TU MENSAJE AQUI" name="" class="styleTextAreas" cols="70%" rows="8"></textarea>
-      </div>
-
-      <div class="container">
-        <h3>Escoge cuántos caractéres deseas desplazar</h3>
-        <input type="number" id="inputOffSet" required>
-      </div>
-
-      <div class="container">
-        <button type="button" id="cifrarBtn" value="">CIFRAR MENSAJE</button>
-        <button type="button" id="descifrarBtn" value="">DESCIFRAR MENSAJE</button>
-      </div>
-
-      <div class="container">
-        <textarea id="textArea2" value="" placeholder="AQUI APARECERA TU MENSAJE CIFRADO/DESCIFRADO" class="styleTextAreas" name="" cols="70%"
-          rows="8"></textarea>
-      </div>
-
-      <div class="container">
-        <button type="button" id="resetbtn">LIMPIAR</button>
-      </div>
-    </div>
-  </div>
-  <script src="cipher.js"></script>
-  <script src="index.js"></script>
+    </footer>
+    <script src="cipher.js"></script>
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>

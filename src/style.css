@@ -1,4 +1,4 @@
-body {
+/*body {
     background: url("https://images.ecosia.org/EnIO5J6WfJpl0eobMjC_nD0HVY8=/0x390/smart/https%3A%2F%2Fcsis-prod.s3.amazonaws.com%2Fs3fs-public%2Fpublication%2F170907_Cyber.jpg%3F0labuGVWHUbIatPJmTqDgj4MGOJCEnZV");
     background-size: 100%;
 }
@@ -35,7 +35,7 @@ ol {
     padding: 0px 40px 10px 40px;
 }
 
-.container {
+ {
    text-align: center;
    padding: 10px;   
 }
@@ -55,5 +55,18 @@ ol {
 .styleTextAreas {
     resize: none;
     width: 85%;
+}*/
+
+header {
+    background-color: cornflowerblue;
+}
+
+button {
+    padding-bottom: 10px;
+}
+
+.inputmsg{
+    height: 250px;
+    /*resize: none;*/
 }
 
